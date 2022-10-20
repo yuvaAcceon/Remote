@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/half_screen_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/channels_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toTopOf="@+id/half_screen_guide"
+        app:layout_constraintEnd_toStartOf="@+id/volume_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/half_channels_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_channels_up"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/cl_channels_text"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ll_channels_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="channels up"
+                    android:src="@drawable/ic_tv" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="channels up"
+                    android:src="@drawable/ic_plus" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_channels_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/half_channels_guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/half_channels_guide">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/txt_channels"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_channels_down"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_channels_text">
+
+            <LinearLayout
+                android:id="@+id/ll_channels_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="channels down"
+                    android:src="@drawable/ic_tv" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="channels down"
+                    android:src="@drawable/ic_minus" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/volume_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/cream"
+        app:layout_constraintBottom_toTopOf="@+id/half_screen_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/channels_container"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/half_volume_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_volume_up"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/cl_volume_text"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ll_volume_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="volume up"
+                    android:src="@drawable/ic_volume_up" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="volume up"
+                    android:src="@drawable/ic_plus" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_volume_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/half_volume_guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/half_volume_guide">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/txt_volume"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_volume_down"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_volume_text">
+
+            <LinearLayout
+                android:id="@+id/ll_volume_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="volume down"
+                    android:src="@drawable/ic_volume_down" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="volume down"
+                    android:src="@drawable/ic_minus" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/half_screen_guide">
+
+        <EditText
+            android:id="@+id/et_speech_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:autofillHints="username"
+            android:background="@null"
+            android:enabled="false"
+            android:focusable="false"
+            android:inputType="none"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/tv_channel_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_channel_number"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/et_speech_text" />
+
+        <TextView
+            android:id="@+id/tv_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_volume_count"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_channel_number" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/seventy_five_screen_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seventy_five_screen_guide">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_call"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/yellow"
+                app:layout_constraintEnd_toStartOf="@+id/cl_ambulance"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/twenty_five_call_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/seventy_five_call_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".75" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/fifteen_call_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/eighty_five_call_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".95" />
+
+                <ImageView
+                    android:id="@+id/iv_call_ring"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="call ring"
+                    android:src="@drawable/ic_circle_ring"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_call_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_call_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_call_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_call_guide" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="call icon"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_call"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_call_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_call_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_call_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_call_guide" />
+
+                <TextView
+                    android:id="@+id/tv_call_calling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/txt_calling"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_call_ring" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_ambulance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/red"
+                app:layout_constraintEnd_toStartOf="@+id/cl_mic"
+                app:layout_constraintStart_toEndOf="@+id/cl_call">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/twenty_five_ambulance_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/seventy_five_ambulance_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".75" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/fifteen_ambulance_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/eighty_five_ambulance_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".95" />
+
+                <ImageView
+                    android:id="@+id/iv_ambulance_ring"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="ambulance ring"
+                    android:src="@drawable/ic_circle_ring"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_ambulance_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_ambulance_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_ambulance_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_ambulance_guide" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="ambulance icon"
+                    android:padding="20dp"
+                    android:src="@drawable/ic_ambulance"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_ambulance_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_ambulance_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_ambulance_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_ambulance_guide" />
+
+                <TextView
+                    android:id="@+id/tv_ambulance_calling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/txt_calling"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_ambulance_ring" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_mic"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/orange"
+                app:layout_constraintEnd_toStartOf="@+id/cl_power"
+                app:layout_constraintStart_toEndOf="@+id/cl_ambulance">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/twenty_five_mic_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/seventy_five_mic_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".75" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/fifteen_mic_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/eighty_five_mic_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".95" />
+
+                <ImageView
+                    android:id="@+id/iv_mic_ring"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="mic ring"
+                    android:src="@drawable/ic_circle_ring"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_mic_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_mic_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_mic_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_mic_guide" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="mic icon"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_mic_on"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_mic_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_mic_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_mic_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_mic_guide" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/txt_press_and_hold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_mic_ring" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_power"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/pink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cl_mic">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/twenty_five_power_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/seventy_five_power_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".75" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/fifteen_power_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/eighty_five_power_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".95" />
+
+                <ImageView
+                    android:id="@+id/iv_power_ring"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="power ring"
+                    android:src="@drawable/ic_circle_ring"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_power_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_power_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_power_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_power_guide" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="power icon"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_power"
+                    app:layout_constraintBottom_toBottomOf="@+id/seventy_five_power_guide"
+                    app:layout_constraintEnd_toEndOf="@+id/eighty_five_power_guide"
+                    app:layout_constraintStart_toStartOf="@+id/fifteen_power_guide"
+                    app:layout_constraintTop_toTopOf="@+id/twenty_five_power_guide" />
+
+                <TextView
+                    android:id="@+id/tv_is_power_on"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/txt_power_on"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_power_ring" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SpeechRemote</string>
+    <string name="shortcut_short_label">clicking power button</string>
+    <string name="shortcut_long_label">clicking power button</string>
+    <string name="content_description_mic">mic to take speech input from user</string>
+    <string name="txt_volume">Volume</string>
+    <string name="txt_channels">Channels</string>
+    <string name="txt_press_and_hold">Press and hold for input</string>
+    <string name="txt_channel_number">Channel Number: %d</string>
+    <string name="txt_volume_count">Volume: %d</string>
+    <string name="txt_power_on">ON</string>
+    <string name="txt_power_off">OFF</string>
+    <string name="txt_calling">Calling…</string>
+</resources>
