@@ -20,7 +20,6 @@
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:background="@color/purple_200"
         app:layout_constraintBottom_toTopOf="@+id/half_screen_guide"
         app:layout_constraintEnd_toStartOf="@+id/volume_container"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +36,7 @@
             android:id="@+id/cl_channels_up"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/purple_200"
             app:layout_constraintBottom_toTopOf="@+id/cl_channels_text"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -90,6 +90,7 @@
             android:id="@+id/cl_channels_down"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/purple_200"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_channels_text">
 
@@ -125,7 +126,6 @@
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:background="@color/cream"
         app:layout_constraintBottom_toTopOf="@+id/half_screen_guide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/channels_container"
@@ -142,6 +142,7 @@
             android:id="@+id/cl_volume_up"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/cream"
             app:layout_constraintBottom_toTopOf="@+id/cl_volume_text"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -194,6 +195,7 @@
             android:id="@+id/cl_volume_down"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/cream"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_volume_text">
 
